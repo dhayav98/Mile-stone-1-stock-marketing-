@@ -38,14 +38,14 @@ public class CompanyControllerImpl implements CompanyController {
 	
 	@RequestMapping("/insertcompany")
 	public Company insert(HttpServletRequest req){
-		int companyCode= 11311;
+		int companyCode= Integer.parseInt(req.getParameter("company_code"));
 		String companyName=req.getParameter("name");
 		double turnOver=Double.parseDouble(req.getParameter("turnover"));
 		String ceo=req.getParameter("coe_name_board_members");
 		String boardOfDirectors=req.getParameter("coe_name_board_members");
-		int sectorId=2;
+		int sectorId=Integer.parseInt(req.getParameter("sector_id"));
 		String briefWriteUp=req.getParameter("brief_desc");
-		int stockCode=2212;
+		int stockCode=Integer.parseInt(req.getParameter("stock_code"));
 		Company company=new Company();
 		company.setCompanyCode(companyCode);
 		company.setCompanyName(companyName);
